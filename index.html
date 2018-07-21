@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <title>Emmy's Calendar</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="./js/puzzles.js"></script>
+    <script src="./js/Calendar.js"></script>
+    <script src="./js/CalendarDay.js"></script>
+    <script src="./js/Dialog.js"></script>
+    <script src="./js/MathPuzzle.js"></script>
+    <script src="./js/Puzzle.js"></script>
+    <script type="text/javascript">
+      const constants = {
+        AM: "T07:10:00.000",
+        CORRECT: [
+          "images/correct.1.png",
+          "images/correct.2.png",
+          "images/correct.3.png",
+          "images/correct.4.jpg",
+          "images/correct.5.jpg",
+          "images/correct.6.jpg"
+        ],
+        INCORRECT: [
+          "images/incorrect.1.png",
+          "images/incorrect.2.png",
+          "images/incorrect.3.jpg",
+          "images/incorrect.4.gif",
+          "images/incorrect.5.jpg",
+          "images/incorrect.6.png"
+        ],
+        PM: "T18:00:00.000"
+      };
+
+      $(document).ready(function() {
+        const calendar = new Calendar({
+          dialog: new Dialog($(".Dialog")),
+          now: moment("2018-07-25T08")
+        });
+        calendar.init();
+      });
+    </script>
+    <style>
+      body {
+        background-color: #e6e6fa;
+        font-family: Chalkboard, "Comic Sans MS", Helvetica, sans-serif;
+        font-size: 15px;
+        margin: 0px 100px;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+      .content {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .Calendar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
+        width: 100%;
+      }
+
+      .Calendar__day {
+        align-items: center;
+        background-color: #fff;
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .Calendar__header {
+        background-color: #9370db;
+        color: #fff;
+        font-size: 3em;
+        padding: 5px;
+        text-align: center;
+      }
+
+      .enabled .puzzleButton {
+        cursor: hand;
+      }
+
+      .disabled .puzzleButton {
+        opacity: .3;
+      }
+
+      .puzzleButton {
+        background-image: url("images/cupcakes.jpg");
+        border: none;
+        height: 130px;
+        outline: none;
+        width: 130px;
+      }
+
+      .puzzleButton__one {
+        background-position: 0 -10px;
+      }
+
+      .puzzleButton__two {
+        background-position: 0 -137px;
+      }
+
+      .puzzleButton__three {
+        background-position: 0 -260px;
+      }
+
+      .puzzleButton__four {
+        background-position: 0 -377px;
+      }
+
+      .puzzleButton__five {
+        background-position: 0 -647px;
+        height: 120px;
+      }
+
+      .puzzleButton__six {
+        background-position: 0 -767px;
+        height: 140px;
+      }
+
+      .puzzleButton__seven {
+        background-position: 0 -905px;
+        height: 120px;
+      }
+
+      .puzzleButton__eight {
+        background-position: -14px -1030px;
+        height: 140px;
+      }
+
+      .Dialog {
+        background-color: #fff;
+        bottom: 50px;
+        display: none;
+        left: 250px;
+        position: absolute;
+        right: 250px;
+        top: 50px;
+      }
+
+      .Dialog--open {
+        display: block;
+      }
+
+      .Dialog__closeButton {
+        cursor: hand;
+        fill: #ff0000;
+        height: 75px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 75px;
+      }
+
+      .Dialog__puzzle {
+        display: none;
+        height: 100%;
+      }
+
+      .Puzzle {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        transition: margin-top 2s 1s;
+        width: 100%;
+      }
+      .Puzzle.solved {
+        margin-top: 25px;
+      }
+      .Puzzle.unsolved {
+        margin-top: 400px;
+      }
+
+      .Puzzle__result {
+        display: flex;
+        height: 400px;
+        justify-content: center;
+        position: relative;
+        transition: margin-top 2s 1s;
+        width: 100%;
+      }
+      .solved + .Puzzle__result {
+        margin-top: 200px;
+      }
+
+      .Puzzle__result-icon {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        width: 400px;
+      }
+
+      .MathPuzzle {
+        font-size: 10em;
+      }
+
+      .MathPuzzle__equals {
+        padding: 0 1em;
+      }
+
+      .MathPuzzle__solution input {
+        border: none;
+        border-bottom: 10px solid #000;
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+        text-align: center;
+        width: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="Calendar">
+        <div class="Calendar__header">Monday</div>
+        <div class="Calendar__header">Tuesday</div>
+        <div class="Calendar__header">Wednesday</div>
+        <div class="Calendar__header">Thursday</div>
+        <div class="Calendar__header">Friday</div>
+        <div></div>
+        <div class="Calendar__day" data-date-id="2018-07-24_AM">
+          <button class="puzzleButton puzzleButton__one" />
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-25_AM">
+          <div class="puzzleButton puzzleButton__two"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-26_AM">
+          <div class="puzzleButton puzzleButton__three"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-27_AM">
+          <div class="puzzleButton puzzleButton__four"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-23_PM">
+          <div class="puzzleButton puzzleButton__five"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-24_PM">
+          <div class="puzzleButton puzzleButton__six"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-25_PM">
+          <div class="puzzleButton puzzleButton__seven"></div>
+        </div>
+        <div class="Calendar__day" data-date-id="2018-07-26_PM">
+          <div class="puzzleButton puzzleButton__eight"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <div class="Dialog">
+      <div class="Dialog__closeButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/>
+        </svg>
+      </div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-23_PM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-24_AM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-24_PM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-25_AM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-25_PM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-26_AM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-26_PM"></div>
+      <div class="Dialog__puzzle" data-date-id="2018-07-27_AM"></div>
+    </div>
+  </body>
+</html>
