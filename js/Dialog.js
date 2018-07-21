@@ -16,10 +16,15 @@ Dialog.prototype.close = function() {
 Dialog.prototype.open = function(id) {
   this._$elem.addClass("Dialog--open");
   this._currentPuzzle = this._findPuzzle(id);
+  this._currentPuzzle.render();
   this._currentPuzzle.show();
 };
 
 Dialog.prototype._findPuzzle = function(dateId) {
   const $elem = $(".Dialog__puzzle[data-date-id=" + dateId + "]", this._$elem);
-  return new Puzzle({ $elem: $elem, id: dateId });
+  if (puzzles[dateId].type === "math") {
+    return new MathPuzzle({ $elem: $elem, data: puzzles[dateId], id: dateId });
+  } else {
+
+  }
 };

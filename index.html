@@ -7,8 +7,8 @@
     <script src="./js/Calendar.js"></script>
     <script src="./js/CalendarDay.js"></script>
     <script src="./js/Dialog.js"></script>
-    <script src="./js/MathPuzzle.js"></script>
     <script src="./js/Puzzle.js"></script>
+    <script src="./js/MathPuzzle.js"></script>
     <script type="text/javascript">
       const constants = {
         AM: "T07:10:00.000",
@@ -34,7 +34,7 @@
       $(document).ready(function() {
         const calendar = new Calendar({
           dialog: new Dialog($(".Dialog")),
-          now: moment("2018-07-25T08")
+          now: moment("2018-08-25T08")
         });
         calendar.init();
       });
@@ -160,6 +160,7 @@
         right: 20px;
         top: 20px;
         width: 75px;
+        z-index: 1;
       }
 
       .Dialog__puzzle {
@@ -168,17 +169,21 @@
       }
 
       .Puzzle {
-        display: flex;
-        justify-content: center;
+        font-size: 10em;
         position: relative;
-        transition: margin-top 2s 1s;
         width: 100%;
       }
-      .Puzzle.solved {
-        margin-top: 25px;
+
+      .Puzzle__content {
+        display: flex;
+        justify-content: center;
+        transition: margin-top 2s 1s;
       }
-      .Puzzle.unsolved {
-        margin-top: 400px;
+      .Puzzle--unsolved .Puzzle__content {
+        margin-top: 450px;
+      }
+      .Puzzle--transitioning .Puzzle__content, .Puzzle--solved .Puzzle__content {
+        margin-top: 100px;
       }
 
       .Puzzle__result {
@@ -189,8 +194,14 @@
         transition: margin-top 2s 1s;
         width: 100%;
       }
-      .solved + .Puzzle__result {
-        margin-top: 200px;
+      .Puzzle--unsolved .Puzzle__result {
+        margin-top: 100px;
+      }
+      .Puzzle--transitioning .Puzzle__result {
+        margin-top: 300px;
+      }
+      .Puzzle--solved .Puzzle__result {
+        display: none;
       }
 
       .Puzzle__result-icon {
@@ -201,8 +212,16 @@
         width: 400px;
       }
 
-      .MathPuzzle {
-        font-size: 10em;
+      .Puzzle__video {
+        display: none;
+        height: 870px;
+        margin-top: 100px;
+        width: 100%;
+      }
+      .Puzzle--unsolved .Puzzle__video {
+      }
+      .Puzzle--solved .Puzzle__video {
+        display: block;
       }
 
       .MathPuzzle__equals {

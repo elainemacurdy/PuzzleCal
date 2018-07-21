@@ -1,9 +1,43 @@
 function Puzzle(args) {
-  this._$elem = args.$elem;
-  this._$result = undefined;
-  this._id = args.id;
-  this._puzzle = undefined;
+  if (args) {
+    this._$elem = args.$elem;
+    this._data = args.data;
+    this._id = args.id;
+    this._isSolved = (localStorage.getItem(this._id) === "true");
+  }
 }
+
+Puzzle.CLASS_NAMES = {
+  base: "Puzzle",
+  content: "Puzzle__content",
+  solved: "Puzzle--solved",
+  transitioning: "Puzzle--transitioning",
+  unsolved: "Puzzle--unsolved"
+};
+
+Puzzle.prototype.render = function() {
+  this._setStateClasses();
+  this._$elem.addClass(Puzzle.CLASS_NAMES.base);
+  this._$elem
+    .append($("<div />")
+      .addClass("Puzzle__content")
+    );
+  this._$elem
+    .append($("<div />")
+      .addClass("Puzzle__result")
+      .append($("<div />").addClass("Puzzle__result-icon"))
+    );
+  this._$elem
+    .append($("<iframe />")
+      .addClass("Puzzle__video")
+      .attr("allow", "autoplay; encrypted-media")
+      .attr("allowfullscreen", true)
+      .attr("frameborder", "0")
+      .attr("height", "315")
+      .attr("width", "560")
+      .attr("src", this._data.video)
+    );
+};
 
 Puzzle.prototype.hide = function() {
   this._$elem.hide();
@@ -16,7 +50,10 @@ Puzzle.prototype.onCorrect = function() {
     .css({
       backgroundImage: "url('" + constants.CORRECT[ran] + "')"
     });
-  this._onSolve();
+  localStorage.setItem(this._id, "true");
+  this._isSolved = true;
+  this._setStateClasses({ isTransitioning: true });
+  setTimeout(this._setStateClasses.bind(this), 4000);
 };
 
 Puzzle.prototype.onGuess = function() {
@@ -32,56 +69,25 @@ Puzzle.prototype.onIncorrect = function() {
 };
 
 Puzzle.prototype.show = function() {
-  this._render();
   this._$elem.show();
 };
 
 Puzzle.prototype._destroy = function() {
-  this._puzzle.destroy();
+  this._$elem.empty();
 };
 
-Puzzle.prototype._onSolve = function() {
-  // set localstorage, show movie
-  localStorage.setItem(this._id, "true");
-  this._puzzle.toggleClass(["solved", "unsolved"]);
-
-};
-
-Puzzle.prototype._render = function() {
-  if (puzzles[this._id].type === "math") {
-    this._puzzle = new MathPuzzle({
-      data: puzzles[this._id],
-      onCorrect: this.onCorrect.bind(this),
-      onGuess: this.onGuess.bind(this),
-      onIncorrect: this.onIncorrect.bind(this)
-    });
+Puzzle.prototype._setStateClasses = function(args) {
+  if ((args || {}).isTransitioning) {
+    this._$elem.addClass(Puzzle.CLASS_NAMES.transitioning);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.solved);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.unsolved);
+  } else if (this._isSolved) {
+    this._$elem.addClass(Puzzle.CLASS_NAMES.solved);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.transitioning);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.unsolved);
   } else {
-    // this._puzzle = new ReadingPuzzle();
-  }
-  this._$elem.append(this._puzzle.render().addClass("Puzzle"));
-  this._$elem
-    .append($("<div />")
-      .addClass("Puzzle__result")
-      .append($("<div />").addClass("Puzzle__result-icon"))
-    );
-  this._setSolvedState();
-};
-
-Puzzle.prototype._setSolvedState = function() {
-  if (localStorage.getItem(this._id) === "true") {
-    this._puzzle.addClass("solved");
-  } else {
-    this._puzzle.addClass("unsolved");
+    this._$elem.addClass(Puzzle.CLASS_NAMES.unsolved);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.transitioning);
+    this._$elem.removeClass(Puzzle.CLASS_NAMES.solved);
   }
 };
-
-/*
- https://www.youtube.com/watch?v=PIb6AZdTr-A - Girls Just Wanna Have Fun
- https://www.youtube.com/watch?v=Cv6tuzHUuuk - Walk Like An Egyptian
- https://www.youtube.com/watch?v=Iwuy4hHO3YQ - Video Killed the Radio Star
- https://www.youtube.com/watch?v=vtHTjjkJjVM - Dark Crystal
- https://www.youtube.com/watch?v=m2uTFF_3MaA - Yellow Submarine
- https://www.youtube.com/watch?v=HrnoR9cBP3o - Spoonful of Sugar
- https://www.youtube.com/watch?v=08NlhjpVFsU - Bear Necessities
- https://www.youtube.com/watch?v=LJTRZI2HThU - Sound of Music
- */
