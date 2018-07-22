@@ -19,11 +19,11 @@ MathPuzzle.prototype.render = function() {
 
 MathPuzzle.prototype._checkSolution = function(guess) {
   if (guess !== "") {
+    document.activeElement.blur();
+    $('input', this._$elem)
+      .attr("disabled", true)
+      .blur();
     if (guess === this._data.solution) {
-      document.activeElement.blur();
-      $('input', this._$elem)
-        .attr("disabled", true)
-        .blur();
       this.onCorrect();
     } else {
       this.onIncorrect();
