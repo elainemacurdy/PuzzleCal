@@ -20,10 +20,9 @@ MathPuzzle.prototype.render = function() {
 MathPuzzle.prototype._checkSolution = function(guess) {
   if (guess !== "") {
     document.activeElement.blur();
-    $('input', this._$elem)
-      .attr("disabled", true)
-      .blur();
+    $('input', this._$elem).blur();
     if (guess === this._data.solution) {
+      $('input', this._$elem).attr("disabled", true);
       this.onCorrect();
     } else {
       this.onIncorrect();
