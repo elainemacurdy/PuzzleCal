@@ -43,6 +43,11 @@
       $(document).ready(function() {
         const searchParam = /\bdate=([^&]*)\b/.exec(location.search);
         const date = (searchParam && searchParam.length > 1) ? searchParam[1] : undefined;
+        const resetParam = /\breset=([^&]*)\b/.exec(location.search);
+        const isReset = (resetParam && resetParam.length > 1) ? (resetParam[1] === "true") : false;
+        if (isReset) {
+          localStorage.clear();
+        }
         const calendar = new Calendar({
           dialog: new Dialog($(".Dialog")),
           now: moment(date)
