@@ -30,7 +30,7 @@ const puzzles = {
   "2018-07-26_AM": {
     type: "reading",
     word: "ant",
-    video: "https://www.youtube-nocookie.com/embed/HrnoR9cBP3o?rel=0" // Spoonful of Sugar
+    video: "https://www.youtube-nocookie.com/embed/fwzVjsu9XvM?rel=0" // Captain Pugwash
   },
   "2018-07-26_PM": {
     type: "math",
@@ -41,17 +41,6 @@ const puzzles = {
   "2018-07-27_AM": {
     type: "reading",
     word: "pony",
-    video: "https://www.youtube-nocookie.com/embed/LJTRZI2HThU?rel=0" // Sound of Music
+    video: "https://www.youtube-nocookie.com/embed/9T4A22p8XRM?rel=0" // Hello Kitty
   }
 };
-
-/*
- https://www.youtube.com/watch?v=PIb6AZdTr-A -
- https://www.youtube.com/watch?v=Cv6tuzHUuuk -
- https://www.youtube.com/watch?v=Iwuy4hHO3YQ -
- https://www.youtube.com/watch?v=vtHTjjkJjVM -
- https://www.youtube.com/watch?v=m2uTFF_3MaA -
- https://www.youtube.com/watch?v=HrnoR9cBP3o -
- https://www.youtube.com/watch?v=08NlhjpVFsU -
- https://www.youtube.com/watch?v=LJTRZI2HThU -
- */
