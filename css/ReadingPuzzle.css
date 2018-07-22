@@ -7,10 +7,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: none;
-  height: 200px;
+  height: 100px;
   margin-left: 50px;
   outline: none;
-  width: 200px;
+  width: 100px;
 }
 .ReadingPuzzle__option:first-child {
   margin-left: 0;
