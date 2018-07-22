@@ -25,8 +25,12 @@
   opacity: .3;
 }
 
+.puzzleButton__zero {
+  background-position: 0 -931px;
+}
+
 .puzzleButton__one {
-  background-position: 0 0px;
+  background-position: 0 0;
 }
 
 .puzzleButton__two {

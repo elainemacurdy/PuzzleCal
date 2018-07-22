@@ -1,20 +1,25 @@
 const puzzles = {
+  "2018-07-23_AM": {
+    type: "reading",
+    word: "sun",
+    video: "https://www.youtube-nocookie.com/embed/PIb6AZdTr-A?rel=0" // Girls Just Wanna Have Fun
+  },
   "2018-07-23_PM": {
     type: "math",
     problem: "4 + 3 + 2",
     solution: "9",
-    video: "https://www.youtube-nocookie.com/embed/PIb6AZdTr-A?rel=0" // Girls Just Wanna Have Fun
+    video: "https://www.youtube-nocookie.com/embed/Cv6tuzHUuuk?rel=0" // Walk Like An Egyptian
   },
   "2018-07-24_AM": {
     type: "reading",
     word: "hat",
-    video: "https://www.youtube-nocookie.com/embed/Cv6tuzHUuuk?rel=0" // Walk Like An Egyptian
+    video: "https://www.youtube-nocookie.com/embed/Iwuy4hHO3YQ?rel=0" // Video Killed the Radio Star
   },
   "2018-07-24_PM": {
     type: "math",
     problem: "10 - 4",
     solution: "6",
-    video: "https://www.youtube-nocookie.com/embed/Iwuy4hHO3YQ?rel=0" // Video Killed the Radio Star
+    video: "https://www.youtube-nocookie.com/embed/yqlqat4VyfM?rel=0" // Morph
   },
   "2018-07-25_AM": {
     type: "reading",
