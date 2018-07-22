@@ -279,6 +279,13 @@
       .ReadingPuzzle__option:active {
         background-color: #bbb;
       }
+      .Puzzle--transitioning .ReadingPuzzle__option, .Puzzle--solved .ReadingPuzzle__option {
+        opacity: .5;
+      }
+
+      .Puzzle--transitioning .ReadingPuzzle__wrong, .Puzzle--solved .ReadingPuzzle__wrong {
+        display: none;
+      }
     </style>
   </head>
   <body>

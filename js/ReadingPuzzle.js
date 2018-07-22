@@ -8,7 +8,9 @@ ReadingPuzzle.CLASS_NAMES = {
   base: "ReadingPuzzle",
   option: "ReadingPuzzle__option",
   options: "ReadingPuzzle__options",
-  word: "ReadingPuzzle__word"
+  right: "ReadingPuzzle__right",
+  word: "ReadingPuzzle__word",
+  wrong: "ReadingPuzzle__wrong"
 };
 ReadingPuzzle.OPTIONS = ["ant", "car", "dog", "hat", "pony", "sun"];
 
@@ -30,7 +32,9 @@ ReadingPuzzle.prototype._checkSolution = function(guess) {
 ReadingPuzzle.prototype._getOptionButton = function(word) {
   return $("<button />")
     .addClass(ReadingPuzzle.CLASS_NAMES.option)
+    .addClass((word === this._data.word) ? ReadingPuzzle.CLASS_NAMES.right : ReadingPuzzle.CLASS_NAMES.wrong)
     .css({ backgroundImage: "url(" + constants.READING[word] + ")" })
+    .attr("disabled", this._isSolved)
     .val(word)
     .bind("click", this._onClickOption.bind(this));
 };
@@ -58,7 +62,7 @@ ReadingPuzzle.prototype._getRandomIndex = function(usedIndeces, limit) {
   return (usedIndeces.indexOf(tryIndex) === -1) ? tryIndex : this._getRandomIndex(usedIndeces, limit);
 };
 
-ReadingPuzzle.prototype._onClickOption = function(e) {
+ReadingPuzzle.prototype._onClickOption = function(event) {
   if (this._onGuessTo) {
     clearTimeout(this._onGuessTo);
     this._onGuessTo = undefined;
