@@ -1,0 +1,27 @@
+.ReadingPuzzle {
+  justify-content: space-evenly;
+}
+
+.ReadingPuzzle__option {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  height: 200px;
+  margin-left: 50px;
+  outline: none;
+  width: 200px;
+}
+.ReadingPuzzle__option:first-child {
+  margin-left: 0;
+}
+.ReadingPuzzle__option:active {
+  background-color: #bbb;
+}
+.Puzzle--transitioning .ReadingPuzzle__option, .Puzzle--solved .ReadingPuzzle__option {
+  opacity: .5;
+}
+
+.Puzzle--transitioning .ReadingPuzzle__wrong, .Puzzle--solved .ReadingPuzzle__wrong {
+  display: none;
+}

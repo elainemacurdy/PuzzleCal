@@ -1,0 +1,54 @@
+.Puzzle {
+  font-size: 6em;
+  position: relative;
+  width: 100%;
+}
+
+.Puzzle__content {
+  display: flex;
+  transition: margin-top 2s 1s;
+}
+.Puzzle--unsolved .Puzzle__content {
+  color: #4169e1;
+  margin-top: 170px;
+}
+.Puzzle--transitioning .Puzzle__content, .Puzzle--solved .Puzzle__content {
+  color: #8A2BE2;
+  margin-top: 0px;
+}
+
+.Puzzle__result {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  position: relative;
+  transition: margin-top 2s 1s;
+  width: 100%;
+}
+.Puzzle--unsolved .Puzzle__result {
+  margin-top: 40px;
+}
+.Puzzle--transitioning .Puzzle__result {
+  margin-top: 120px;
+}
+.Puzzle--solved .Puzzle__result {
+  display: none;
+}
+
+.Puzzle__result-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 200px;
+}
+
+.Puzzle__video {
+  display: none;
+  height: 423px;
+  margin: 0 auto 0 auto;
+  width: 750px;
+}
+.Puzzle--solved .Puzzle__video {
+  display: block;
+}

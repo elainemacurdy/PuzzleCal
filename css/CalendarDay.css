@@ -1,0 +1,60 @@
+.Calendar__day {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50px 10px;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.puzzleButton {
+  background-image: url("../images/cupcakes.png");
+  border: none;
+  height: 100px;
+  outline: none;
+  width: 100px;
+}
+
+.enabled .puzzleButton {
+  cursor: hand;
+}
+
+.disabled .puzzleButton {
+  opacity: .3;
+}
+
+.puzzleButton__one {
+  background-position: 0 -10px;
+}
+
+.puzzleButton__two {
+  background-position: 0 -262px;
+}
+
+.puzzleButton__three {
+  background-position: 0 -505px;
+}
+
+.puzzleButton__four {
+  background-position: 0 -1015px;
+  height: 285px;
+}
+
+.puzzleButton__five {
+  background-position: 0 -760px;
+}
+
+.puzzleButton__six {
+  background-position: 0 -1304px;
+}
+
+.puzzleButton__seven {
+  background-position: 0 -1554px;
+  height: 290px;
+}
+
+.puzzleButton__eight {
+  background-position: -14px -1845px;
+}

@@ -1,0 +1,16 @@
+.Calendar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.Calendar__header {
+  background-color: #9370db;
+  border: 1px solid transparent;
+  border-radius: 50px 10px;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 5px;
+  text-align: center;
+}

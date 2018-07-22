@@ -1,0 +1,32 @@
+.Dialog {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  bottom: 50px;
+  display: none;
+  left: 75px;
+  overflow: hidden;
+  position: absolute;
+  right: 75px;
+  top: 50px;
+}
+
+.Dialog--open {
+  display: block;
+}
+
+.Dialog__closeButton {
+  cursor: hand;
+  fill: #90ee90;
+  height: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  z-index: 1;
+}
+
+.Dialog__puzzle {
+  display: none;
+  height: 100%;
+}

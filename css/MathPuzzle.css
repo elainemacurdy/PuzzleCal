@@ -1,0 +1,38 @@
+.MathPuzzle {
+  justify-content: center;
+}
+
+.MathPuzzle__equals {
+  padding: 0 1em;
+}
+.Puzzle--transitioning .MathPuzzle__equals, .Puzzle--solved .MathPuzzle__equals {
+  padding-right: 0;
+}
+
+.MathPuzzle__solution input {
+  border: none;
+  border-bottom: 10px solid currentColor;
+  box-sizing: border-box;
+  color: #dc143c;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1em;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+  -webkit-appearance: none;
+  width: 2em;
+}
+.MathPuzzle__solution input[disabled] {
+  background: white;
+  color: currentColor;
+  height: 1.2em;
+  -webkit-opacity: 1;
+  -webkit-text-fill-color: currentColor;
+}
+.Puzzle--transitioning .MathPuzzle__solution input, .Puzzle--solved .MathPuzzle__solution input {
+  border-bottom: none;
+  color: inherit;
+}
