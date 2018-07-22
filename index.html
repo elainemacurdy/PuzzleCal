@@ -41,9 +41,11 @@
       };
 
       $(document).ready(function() {
+        const searchParam = /\bdate=([^&]*)\b/.exec(location.search);
+        const date = (searchParam && searchParam.length > 1) ? searchParam[1] : undefined;
         const calendar = new Calendar({
           dialog: new Dialog($(".Dialog")),
-          now: moment("2018-08-25T08")
+          now: moment(date)
         });
         calendar.init();
       });
