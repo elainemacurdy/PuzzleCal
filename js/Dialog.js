@@ -25,6 +25,6 @@ Dialog.prototype._findPuzzle = function(dateId) {
   if (puzzles[dateId].type === "math") {
     return new MathPuzzle({ $elem: $elem, data: puzzles[dateId], id: dateId });
   } else {
-
+    return new ReadingPuzzle({ $elem: $elem, data: puzzles[dateId], id: dateId });
   }
 };

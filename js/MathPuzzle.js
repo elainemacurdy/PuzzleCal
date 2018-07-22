@@ -6,9 +6,7 @@ MathPuzzle.prototype = new Puzzle;
 
 MathPuzzle.CLASS_NAMES = {
   base: "MathPuzzle",
-  correct: "MathPuzzle--correct",
   equals: "MathPuzzle__equals",
-  incorrect: "MathPuzzle--incorrect",
   problem: "MathPuzzle__problem",
   solution: "MathPuzzle__solution"
 };
@@ -36,7 +34,6 @@ MathPuzzle.prototype._onChangeInput = function(event) {
     this._onGuessTo = undefined;
   }
   this.onGuess();
-  this._$elem.removeClass([MathPuzzle.CLASS_NAMES.correct, MathPuzzle.CLASS_NAMES.incorrect]);
   const guess = event.currentTarget.value;
   this._onGuessTo = setTimeout(function() { this._checkSolution(guess); }.bind(this), 1500);
 };

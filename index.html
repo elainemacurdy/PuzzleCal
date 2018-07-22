@@ -9,6 +9,7 @@
     <script src="./js/Dialog.js"></script>
     <script src="./js/Puzzle.js"></script>
     <script src="./js/MathPuzzle.js"></script>
+    <script src="./js/ReadingPuzzle.js"></script>
     <script type="text/javascript">
       const constants = {
         AM: "T07:10:00.000",
@@ -28,7 +29,15 @@
           "images/incorrect.5.jpg",
           "images/incorrect.6.png"
         ],
-        PM: "T18:00:00.000"
+        PM: "T18:00:00.000",
+        READING: {
+          ant: "images/reading.ant.png",
+          car: "images/reading.car.png",
+          dog: "images/reading.dog.png",
+          hat: "images/reading.hat.png",
+          pony: "images/reading.pony.png",
+          sun: "images/reading.sun.png"
+        }
       };
 
       $(document).ready(function() {
@@ -176,7 +185,6 @@
 
       .Puzzle__content {
         display: flex;
-        justify-content: center;
         transition: margin-top 2s 1s;
       }
       .Puzzle--unsolved .Puzzle__content {
@@ -224,6 +232,10 @@
         display: block;
       }
 
+      .MathPuzzle {
+        justify-content: center;
+      }
+
       .MathPuzzle__equals {
         padding: 0 1em;
       }
@@ -236,6 +248,27 @@
         outline: none;
         text-align: center;
         width: 2em;
+      }
+
+      .ReadingPuzzle {
+        justify-content: space-evenly;
+      }
+
+      .ReadingPuzzle__option {
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        height: 200px;
+        margin-left: 50px;
+        outline: none;
+        width: 200px;
+      }
+      .ReadingPuzzle__option:first-child {
+        margin-left: 0;
+      }
+      .ReadingPuzzle__option:active {
+        background-color: #bbb;
       }
     </style>
   </head>
