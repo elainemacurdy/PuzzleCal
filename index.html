@@ -231,9 +231,9 @@
 
       .Puzzle__video {
         display: none;
-        height: 455px;
-        margin: 25px auto 0 auto;
-        width: 805px;
+        height: 423px;
+        margin: 0 auto 0 auto;
+        width: 750px;
       }
       .Puzzle--solved .Puzzle__video {
         display: block;
@@ -245,6 +245,9 @@
 
       .MathPuzzle__equals {
         padding: 0 1em;
+      }
+      .Puzzle--transitioning .MathPuzzle__equals, .Puzzle--solved .MathPuzzle__equals {
+        padding-right: 0;
       }
 
       .MathPuzzle__solution input {
@@ -258,8 +261,8 @@
         width: 2em;
       }
       .Puzzle--transitioning .MathPuzzle__solution input, .Puzzle--solved .MathPuzzle__solution input {
-        color: inherit;
         border-bottom: none;
+        color: inherit;
       }
 
       /*.ReadingPuzzle {*/
