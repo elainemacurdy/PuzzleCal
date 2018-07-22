@@ -12,9 +12,9 @@
 .puzzleButton {
   background-image: url("../images/cupcakes.png");
   border: none;
-  height: 100px;
+  height: 115px;
   outline: none;
-  width: 100px;
+  width: 120px;
 }
 
 .enabled .puzzleButton {
@@ -26,35 +26,36 @@
 }
 
 .puzzleButton__one {
-  background-position: 0 -10px;
+  background-position: 0 0px;
 }
 
 .puzzleButton__two {
-  background-position: 0 -262px;
+  background-position: 0 -117px;
 }
 
 .puzzleButton__three {
-  background-position: 0 -505px;
+  background-position: 0 -226px;
 }
 
 .puzzleButton__four {
-  background-position: 0 -1015px;
-  height: 285px;
+  background-position: 0 -449px;
+  height: 128px;
 }
 
 .puzzleButton__five {
-  background-position: 0 -760px;
+  background-position: 0 -333px;
 }
 
 .puzzleButton__six {
-  background-position: 0 -1304px;
+  background-position: 0 -577px;
+  height: 108px;
 }
 
 .puzzleButton__seven {
-  background-position: 0 -1554px;
-  height: 290px;
+  background-position: 0 -685px;
+  height: 132px;
 }
 
 .puzzleButton__eight {
-  background-position: -14px -1845px;
+  background-position: 0 -815px;
 }
