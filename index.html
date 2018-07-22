@@ -81,6 +81,8 @@
       .Calendar__day {
         align-items: center;
         background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 50px 10px;
         display: flex;
         height: 300px;
         justify-content: center;
@@ -89,6 +91,8 @@
 
       .Calendar__header {
         background-color: #9370db;
+        border: 1px solid transparent;
+        border-radius: 50px 10px;
         color: #fff;
         font-size: 3em;
         padding: 5px;
@@ -147,6 +151,8 @@
 
       .Dialog {
         background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 25px;
         bottom: 50px;
         display: none;
         left: 250px;
@@ -161,7 +167,7 @@
 
       .Dialog__closeButton {
         cursor: hand;
-        fill: #ff0000;
+        fill: #90ee90;
         height: 75px;
         position: absolute;
         right: 20px;
@@ -186,9 +192,11 @@
         transition: margin-top 2s 1s;
       }
       .Puzzle--unsolved .Puzzle__content {
+        color: #4169e1;
         margin-top: 450px;
       }
       .Puzzle--transitioning .Puzzle__content, .Puzzle--solved .Puzzle__content {
+        color: #8A2BE2;
         margin-top: 100px;
       }
 
@@ -224,8 +232,6 @@
         margin-top: 100px;
         width: 100%;
       }
-      .Puzzle--unsolved .Puzzle__video {
-      }
       .Puzzle--solved .Puzzle__video {
         display: block;
       }
@@ -240,12 +246,17 @@
 
       .MathPuzzle__solution input {
         border: none;
-        border-bottom: 10px solid #000;
+        border-bottom: 10px solid currentColor;
+        color: #dc143c;
         font-family: inherit;
         font-size: inherit;
         outline: none;
         text-align: center;
         width: 2em;
+      }
+      .Puzzle--transitioning .MathPuzzle__solution input, .Puzzle--solved .MathPuzzle__solution input {
+        color: inherit;
+        border-bottom: none;
       }
 
       .ReadingPuzzle {
