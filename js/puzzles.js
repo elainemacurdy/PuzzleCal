@@ -1,51 +1,63 @@
 const puzzles = {
-  "2018-07-23_AM": {
-    type: "reading",
-    word: "sun",
-    video: "https://www.youtube-nocookie.com/embed/PIb6AZdTr-A?rel=0" // Girls Just Wanna Have Fun
-  },
-  "2018-07-23_PM": {
+  "2018-09-30_PM": {
     type: "math",
-    problem: "4 + 3 + 2",
-    solution: "9",
-    video: "https://www.youtube-nocookie.com/embed/Cv6tuzHUuuk?rel=0" // Walk Like An Egyptian
+    problem: "3 + 3 + 1",
+    solution: "7",
+    video: "https://www.youtube-nocookie.com/embed/7CgEtGhJLVc?rel=0" // Clangers Ep 1
   },
-  "2018-07-24_AM": {
+  "2018-10-01_AM": {
+    type: "reading",
+    word: "car",
+    video: "https://www.youtube-nocookie.com/embed/mk6zbY8i4_8?rel=0" // Wallace and Gromit Wrong Trousers
+  },
+  "2018-10-01_PM": {
+    type: "math",
+    problem: "9 - 4",
+    solution: "5",
+    video: "https://www.youtube-nocookie.com/embed/PCOWE0EiCyo?rel=0" // Creature Comforts Original
+  },
+  "2018-10-02_AM": {
     type: "reading",
     word: "hat",
-    video: "https://www.youtube-nocookie.com/embed/Iwuy4hHO3YQ?rel=0" // Video Killed the Radio Star
+    video: "https://www.youtube-nocookie.com/embed/RhRkAzaDuyg?rel=0" // Swedish Chef
   },
-  "2018-07-24_PM": {
+  "2018-10-02_PM": {
     type: "math",
-    problem: "10 - 4",
-    solution: "6",
-    video: "https://www.youtube-nocookie.com/embed/yqlqat4VyfM?rel=0" // Morph
+    problem: "4 + 6",
+    solution: "10",
+    video: "https://www.youtube-nocookie.com/embed/zWGoTHvjDRc?rel=0" // Topsy and Tim (long)
   },
-  "2018-07-25_AM": {
+  "2018-10-03_AM": {
     type: "reading",
     word: "dog",
-    video: "https://www.youtube-nocookie.com/embed/08NlhjpVFsU?rel=0" // Bear Necessities
+    video: "https://www.youtube-nocookie.com/embed/C-blaYP-0Ug?rel=0" // Muppets Octopus's Garden
   },
-  "2018-07-25_PM": {
+  "2018-10-03_PM": {
     type: "math",
-    problem: "5 + 6",
-    solution: "11",
-    video: "https://www.youtube-nocookie.com/embed/m2uTFF_3MaA?rel=0" // Yellow Submarine
+    problem: "4 - 0",
+    solution: "4",
+    video: "https://www.youtube-nocookie.com/embed/utXbpKrWRBs?rel=0" // Moomin Ep 1
   },
-  "2018-07-26_AM": {
+  "2018-10-04_AM": {
     type: "reading",
     word: "ant",
-    video: "https://www.youtube-nocookie.com/embed/fwzVjsu9XvM?rel=0" // Captain Pugwash
+    video: "https://www.youtube-nocookie.com/embed/c3DcChXNyYQ?rel=0" // Magic Roundabout
   },
-  "2018-07-26_PM": {
+  "2018-10-04_PM": {
     type: "math",
-    problem: "5 - 0",
-    solution: "5",
-    video: "https://www.youtube-nocookie.com/embed/vtHTjjkJjVM?rel=0" // Dark Crystal
+    problem: "2 - 3",
+    solution: "-1",
+    video: "https://www.youtube-nocookie.com/embed/7X__zO4A9mE&?rel=0" // Bitz and Bob (long)
   },
-  "2018-07-27_AM": {
+  "2018-10-05_AM": {
     type: "reading",
     word: "pony",
-    video: "https://www.youtube-nocookie.com/embed/9T4A22p8XRM?rel=0" // Hello Kitty
+    video: "https://www.youtube-nocookie.com/embed/1svA2sGhDEE?rel=0" // Emu's Pink Windmill
+  },
+  "2018-10-05_PM": {
+    type: "math",
+    problem: "0 - 2",
+    solution: "-2",
+    video: "https://www.youtube-nocookie.com/embed/tgbNymZ7vqY?rel=0" // Muppets Bohemian Rhapsody
   }
 };
