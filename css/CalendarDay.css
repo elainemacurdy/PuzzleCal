@@ -4,7 +4,7 @@
   border: 1px solid transparent;
   border-radius: 50px 10px;
   display: flex;
-  height: 120px;
+  height: 110px;
   justify-content: center;
   padding: 20px;
 }
@@ -12,9 +12,9 @@
 .puzzleButton {
   background-image: url("../images/cupcakes.png");
   border: none;
-  height: 115px;
+  height: 105px;
   outline: none;
-  width: 120px;
+  width: 110px;
 }
 
 .enabled .puzzleButton {
