@@ -22,7 +22,7 @@ CalendarDay.prototype.init = function() {
 
 CalendarDay.prototype._initEnabledState = function() {
   const parsedId = CalendarDay.parseId(this._id);
-  const dateTime = moment(parsedId.date + constants[parsedId.meridiem]);
+  const dateTime = moment(`${parsedId.date}T${constants[parsedId.meridiem].h}:${constants[parsedId.meridiem].m}:00.000`);
   if (this._now.isBefore(dateTime)) {
     this._$elem.addClass(CalendarDay.CLASS_NAMES.disabled);
   } else {

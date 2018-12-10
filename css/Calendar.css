@@ -1,7 +1,25 @@
 .Calendar {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
+}
+
+.Calendar--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+}
+
+.Calendar--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+  width: 80%;
+}
+
+.Calendar--6-cols {
+  grid-template-columns: repeat(6, 1fr);
+  width: 90%;
+}
+
+.Calendar--7-cols {
+  grid-template-columns: repeat(7, 1fr);
   width: 100%;
 }
 

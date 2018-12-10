@@ -12,7 +12,7 @@
     <script src="./js/ReadingPuzzle.js"></script>
     <script type="text/javascript">
       const constants = {
-        AM: "T07:10:00.000",
+        AM: { h: "07", m: "10" },
         CORRECT: [
           "images/correct.1.png",
           "images/correct.2.png",
@@ -29,7 +29,7 @@
           "images/incorrect.5.jpg",
           "images/incorrect.6.png"
         ],
-        PM: "T18:00:00.000",
+        PM: { h: "18", m: "00" },
         READING: {
           ant: "images/reading.ant.png",
           car: "images/reading.car.png",
@@ -50,7 +50,11 @@
         }
         const calendar = new Calendar({
           dialog: new Dialog($(".Dialog")),
-          now: moment(date)
+          now: moment(date),
+          range: {
+            from: moment({ y: 2018, M: 11, d: 10, h: 12 }),
+            to: moment({ y: 2018, M: 11, d: 13, h: 12 })
+          }
         });
         calendar.init();
       });
@@ -88,48 +92,7 @@
   </head>
   <body>
     <div class="content">
-      <div class="Calendar">
-        <div class="Calendar__header">Sunday</div>
-        <div class="Calendar__header">Monday</div>
-        <div class="Calendar__header">Tuesday</div>
-        <div class="Calendar__header">Wednesday</div>
-        <div class="Calendar__header">Thursday</div>
-        <div class="Calendar__header">Friday</div>
-        <div></div>
-        <div class="Calendar__day" data-date-id="2018-10-01_AM">
-          <button class="puzzleButton puzzleButton__zero"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-02_AM">
-          <button class="puzzleButton puzzleButton__one"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-03_AM">
-          <button class="puzzleButton puzzleButton__two"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-04_AM">
-          <button class="puzzleButton puzzleButton__three"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-05_AM">
-          <button class="puzzleButton puzzleButton__four"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-09-30_PM">
-          <button class="puzzleButton puzzleButton__five"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-01_PM">
-          <button class="puzzleButton puzzleButton__six"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-02_PM">
-          <button class="puzzleButton puzzleButton__seven"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-03_PM">
-          <button class="puzzleButton puzzleButton__eight"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-04_PM">
-          <button class="puzzleButton puzzleButton__nine"></button>
-        </div>
-        <div class="Calendar__day" data-date-id="2018-10-05_PM">
-          <button class="puzzleButton puzzleButton__ten"></button>
-        </div>
-      </div>
+      <div class="Calendar" />
     </div>
     <div class="Dialog">
       <div class="Dialog__closeButton">

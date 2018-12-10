@@ -4,17 +4,17 @@
   border: 1px solid transparent;
   border-radius: 50px 10px;
   display: flex;
-  height: 110px;
+  height: 170px;
   justify-content: center;
-  padding: 20px;
 }
 
 .puzzleButton {
-  background-image: url("../images/cupcakes.png");
+  background-size: cover;
   border: none;
-  height: 105px;
+  border-radius: inherit;
+  height: 100%;
   outline: none;
-  width: 110px;
+  width: 100%;
 }
 
 .enabled .puzzleButton {
@@ -23,43 +23,4 @@
 
 .disabled .puzzleButton {
   opacity: .3;
-}
-
-.puzzleButton__zero {
-  background-position: 0 -931px;
-}
-
-.puzzleButton__one {
-  background-position: 0 0;
-}
-
-.puzzleButton__two {
-  background-position: 0 -117px;
-}
-
-.puzzleButton__three {
-  background-position: 0 -226px;
-}
-
-.puzzleButton__four {
-  background-position: 0 -449px;
-  height: 128px;
-}
-
-.puzzleButton__five {
-  background-position: 0 -333px;
-}
-
-.puzzleButton__six {
-  background-position: 0 -577px;
-  height: 108px;
-}
-
-.puzzleButton__seven {
-  background-position: 0 -685px;
-  height: 132px;
-}
-
-.puzzleButton__eight {
-  background-position: 0 -815px;
 }
