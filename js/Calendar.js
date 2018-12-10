@@ -29,7 +29,7 @@ Calendar.prototype._getDayNode = function(date) {
     .append($("<button />")
       .addClass("puzzleButton")
       .css({ backgroundImage: `url("images/animals/${puzzles[id].image}")` })
-    )
+    );
 };
 
 Calendar.prototype._populateDays = function () {

@@ -12,7 +12,7 @@ ReadingPuzzle.CLASS_NAMES = {
   word: "ReadingPuzzle__word",
   wrong: "ReadingPuzzle__wrong"
 };
-ReadingPuzzle.OPTIONS = ["ant", "car", "dog", "hat", "pony", "sun"];
+ReadingPuzzle.OPTIONS = ["ant", "baby", "car", "cat", "dog", "hat", "pony", "robin", "sun"];
 
 ReadingPuzzle.prototype.render = function() {
   Puzzle.prototype.render.apply(this, arguments);
@@ -33,7 +33,7 @@ ReadingPuzzle.prototype._getOptionButton = function(word) {
   return $("<button />")
     .addClass(ReadingPuzzle.CLASS_NAMES.option)
     .addClass((word === this._data.word) ? ReadingPuzzle.CLASS_NAMES.right : ReadingPuzzle.CLASS_NAMES.wrong)
-    .css({ backgroundImage: "url(" + constants.READING[word] + ")" })
+    .css({ backgroundImage: `url("images/reading.${word}.png")` })
     .attr("disabled", this._isSolved)
     .val(word)
     .bind("click", this._onClickOption.bind(this));
