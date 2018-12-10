@@ -28,6 +28,7 @@ Calendar.prototype._getDayNode = function(date) {
     .data("date-id", id)
     .append($("<button />")
       .addClass("puzzleButton")
+      .css({ backgroundImage: `url("images/animals/${puzzles[id].image}")` })
     )
 };
 
