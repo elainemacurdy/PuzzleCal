@@ -9,6 +9,7 @@
 }
 
 .puzzleButton {
+  background-position: center center;
   background-size: cover;
   border: none;
   border-radius: inherit;
